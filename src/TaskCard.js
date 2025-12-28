@@ -1,14 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 
 function TaskCard({ todo }){
+
+    const [isChecked, setIsChecked] = useState(todo.completed)
+
+    function handleCheckBoxClick(){
+        setIsChecked(!isChecked)
+        // add PATCH request
+    }
+
+
   return (
-    <div>
-        <h4>{todo.title}</h4>
-        <p>{todo.category}</p>
-        <ul>
-            <li>{todo.start.toLocaleString()}</li>
-            {/* {todo.completed} create checkbox */}
-        </ul>
+    <div style={{border: "solid 2px black", borderRadius: "5px", margin: "5px"}}>
+        <label>
+            <input type='checkbox' checked={isChecked} onChange={handleCheckBoxClick}/>
+            {todo.title}
+        </label>
+
+        <p>{todo.category}</p> 
+        <p>{todo.start.toLocaleString()}</p>
+        
     </div>
   )
 }
