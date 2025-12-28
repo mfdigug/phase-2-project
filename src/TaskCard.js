@@ -6,8 +6,8 @@ function TaskCard({ todo }){
         <h4>{todo.title}</h4>
         <p>{todo.category}</p>
         <ul>
-            {todo.start.toLocaleString()}
-            {todo.completed}
+            <li>{todo.start.toLocaleString()}</li>
+            {/* {todo.completed} create checkbox */}
         </ul>
     </div>
   )
