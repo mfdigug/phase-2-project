@@ -1,8 +1,11 @@
 import React from 'react'
 
-const TaskCard = () => {
+function TaskCard(){
   return (
-    <div>TaskCard</div>
+    <div>
+        <h4>Task </h4>
+        <p>get shit done</p>
+    </div>
   )
 }
 
