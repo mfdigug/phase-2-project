@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <Header />
-      <HomePage />
+      <HomePage allTodos={allTodos}/>
       <TodoDashboard />
       <TodoCalendar />
     </div>

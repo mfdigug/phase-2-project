@@ -1,10 +1,14 @@
 import React from 'react'
 
-function TaskCard(){
+function TaskCard({ todo }){
   return (
     <div>
-        <h4>Task </h4>
-        <p>get shit done</p>
+        <h4>{todo.title}</h4>
+        <p>{todo.category}</p>
+        <ul>
+            {todo.start.toLocaleString()}
+            {todo.completed}
+        </ul>
     </div>
   )
 }

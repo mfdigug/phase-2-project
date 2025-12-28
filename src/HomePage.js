@@ -1,12 +1,16 @@
 import React from 'react'
 import TaskCard from './TaskCard'
 
-const HomePage = () => {
+const HomePage = ({ allTodos }) => {
   return (
     <div>
     <h2>Home Page</h2>
     <h3>Today's Tasks</h3>
-    <TaskCard />
+    {allTodos.map(todo => (
+        <TaskCard key={todo.id} todo={todo} />
+    ))
+    }
+    
     </div>
   )
 }
