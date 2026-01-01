@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import HomePage from './HomePage.js'
 import TodoDashboard from './TodoDashboard'
@@ -23,9 +24,11 @@ function App() {
   return (
     <div>
       <Header />
-      <HomePage allTodos={allTodos}/>
-      <TodoDashboard allTodos={allTodos}/>
-      <TodoCalendar />
+      <Routes>
+        <Route path="/" element={<HomePage allTodos={allTodos}/>} />
+        <Route path="/tododashboard" element={<TodoDashboard allTodos={allTodos}/>} />
+        <Route path="/todocalendar" element={<TodoCalendar />} />
+      </Routes>
     </div>
   );
 }

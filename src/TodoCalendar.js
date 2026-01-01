@@ -2,7 +2,7 @@ import React from 'react'
 
 const TodoCalendar = () => {
   return (
-    <div>TodoCalendar</div>
+    <div>Todo Calendar</div>
   )
 }
 
