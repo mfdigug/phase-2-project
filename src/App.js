@@ -7,7 +7,9 @@ import TodoCalendar from './TodoCalendar.js'
 import AddTodo from './AddTodo.js'
 
 function App() {
+
   const [allTodos, setAllTodos] = useState([]);
+  
   useEffect(() => {
     fetch("http://localhost:3000/allTodos")
     .then(r => r.json())
@@ -21,7 +23,6 @@ function App() {
     });
   }, [])
   
-
   function handleAddTodo(newTodo){
     const updatedTodos = [...allTodos, newTodo]
     setAllTodos(updatedTodos)
@@ -89,7 +90,7 @@ function App() {
               />
             } 
           />
-          
+
       </Routes>
     </div>
   );

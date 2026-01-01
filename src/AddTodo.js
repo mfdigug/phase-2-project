@@ -13,22 +13,6 @@ function AddTodo({ onHandleAddTodo }){
       completed: false
   })
 
-   function toUtcISOString(localDateTime) {
-    if (!localDateTime) return ""
-    return new Date(localDateTime).toISOString()
-  }
-
-  function handleSubmit(e){
-    e.preventDefault();
-    const formattedTodo = {
-
-    ...newTodo,
-      start: toUtcISOString(newTodo.start),
-      end: toUtcISOString(newTodo.end)
-    }
-    console.log(formattedTodo) 
-  }
-
   function handleChange(e) {
     const key = e.target.id
     const value = e.target.value
@@ -38,7 +22,33 @@ function AddTodo({ onHandleAddTodo }){
       [key]: value
     })
   }
-  console.log(newTodo)
+
+  function toUtcISOString(localDateTime) {
+   if (!localDateTime) return ""
+   return new Date(localDateTime).toISOString()
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+
+    const formattedTodo = {
+    ...newTodo,
+      start: toUtcISOString(newTodo.start),
+      end: toUtcISOString(newTodo.end)
+    }
+
+    fetch(`http://localhost:3000/allTodos`, {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json"
+     },
+     body: JSON.stringify(formattedTodo)
+     })
+     .then(r => r.json())
+     .then(newTodoObj => onHandleAddTodo(newTodoObj))
+     //add push function to reroute to dashboard?
+     //see if dashboard can reload immediately to fix time format?
+  }
 
   return (
     <div>
