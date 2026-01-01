@@ -6,9 +6,14 @@ function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleEditTask, onHandl
     <div>
         <h2>Task Dashboard</h2>
         {allTodos.map(todo => (
-        <TaskCard key={todo.id} todo={todo} onHandleDeleteTask={onHandleDeleteTask} onHandleEditTask={onHandleEditTask} onHandleCheck={onHandleCheck} />
-    ))
-    }
+          <TaskCard 
+            key={todo.id} 
+            todo={todo} 
+            onHandleDeleteTask={onHandleDeleteTask} 
+            onHandleEditTask={onHandleEditTask} 
+            onHandleCheck={onHandleCheck} 
+          />
+        ))}
     </div>
   )
 }

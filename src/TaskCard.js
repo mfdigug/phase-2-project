@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faPencil } from '@fortawesome/free-solid-svg-icons'
@@ -23,7 +22,9 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
     .then(updatedTodo => onHandleCheck(updatedTodo.id))
     }
 
+    // function handleEdit(){
 
+    // }
     
     function handleDelete(){
         fetch(`http://localhost:3000/allTodos/${todo.id}`, {
