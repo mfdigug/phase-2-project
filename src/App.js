@@ -20,13 +20,21 @@ function App() {
     });
   }, [])
   
+  function handleDeleteTask(id){
+     const updatedTodos = allTodos.filter(todo => todo.id !== id)
+     setAllTodos(updatedTodos)
+ }
+
+  function handleEditTask(id){
+    console.log(id)
+  }
 
   return (
     <div>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage allTodos={allTodos}/>} />
-        <Route path="/tododashboard" element={<TodoDashboard allTodos={allTodos}/>} />
+        <Route path="/tododashboard" element={<TodoDashboard allTodos={allTodos} onHandleDeleteTask={handleDeleteTask} onHandleEditTask={handleEditTask}/>} />
         <Route path="/todocalendar" element={<TodoCalendar />} />
       </Routes>
     </div>
