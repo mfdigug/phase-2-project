@@ -78,7 +78,7 @@ function App() {
         <Route 
           path="/todocalendar" 
           element={
-            <TodoCalendar />
+            <TodoCalendar allTodos={allTodos}/>
           } 
         />
         

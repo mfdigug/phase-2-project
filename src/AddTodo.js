@@ -89,10 +89,7 @@ function AddTodo({ onHandleAddTodo }){
           value={newTodo.end}
           onChange={handleChange}
         />
-
-
-        
-
+        <br />
         <button type="submit">Add todo</button>
       </form>
     </div>
