@@ -1,13 +1,15 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 
 const Nav = () => {
   return (
     <div>
-        <h3>Placeholders</h3>
+        <h3>Menu</h3>
         <ul>
-            <li>Home Page</li>
-            <li>Todo Dashboard</li>
-            <li>Todo Calendar</li>
+            <li><NavLink to='/'>Home Page</NavLink></li>
+            <li><NavLink to='/tododashboard'>Todo Dashboard</NavLink></li>
+            <li><NavLink to='/todocalendar'>Calendar View</NavLink></li>
         </ul>
         <button>Add Todo</button>
     </div>
