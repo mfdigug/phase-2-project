@@ -1,8 +1,15 @@
 import React from 'react'
+import TaskCard from './TaskCard'
 
-const TodoDashboard = () => {
+function TodoDashboard({ allTodos }){
   return (
-    <div>TodoDashboard</div>
+    <div>
+        <h2>Task Dashboard</h2>
+        {allTodos.map(todo => (
+        <TaskCard key={todo.id} todo={todo} />
+    ))
+    }
+    </div>
   )
 }
 
