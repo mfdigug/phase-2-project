@@ -20,6 +20,17 @@ function App() {
     });
   }, [])
   
+  function handleCheck(id){    
+     const updatedTodos = allTodos.map(todo => {
+      if(todo.id === id) {
+        return{...todo, completed: !todo.completed }
+      } else {
+        return todo
+      }
+    })
+    setAllTodos(updatedTodos)
+  }
+
   function handleDeleteTask(id){
      const updatedTodos = allTodos.filter(todo => todo.id !== id)
      setAllTodos(updatedTodos)
@@ -34,7 +45,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage allTodos={allTodos}/>} />
-        <Route path="/tododashboard" element={<TodoDashboard allTodos={allTodos} onHandleDeleteTask={handleDeleteTask} onHandleEditTask={handleEditTask}/>} />
+        <Route path="/tododashboard" element={<TodoDashboard allTodos={allTodos} onHandleDeleteTask={handleDeleteTask} onHandleEditTask={handleEditTask} onHandleCheck={handleCheck}/>} />
         <Route path="/todocalendar" element={<TodoCalendar />} />
       </Routes>
     </div>
