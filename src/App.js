@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import './styles/App.css'
 import Header from './Header'
 import HomePage from './HomePage.js'
 import TodoDashboard from './TodoDashboard'
@@ -49,9 +50,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="whole-window">
+      <div className="header-container">
       <Header />
-      
+      </div>
+      <div className="routes-container">
       <Routes>
         
         <Route 
@@ -92,6 +95,7 @@ function App() {
           />
 
       </Routes>
+      </div>
     </div>
   );
 }
