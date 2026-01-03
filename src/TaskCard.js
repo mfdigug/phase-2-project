@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faPencil } from '@fortawesome/free-solid-svg-icons'
-
+import "./styles/TaskCards.css"
 
 function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck }){
    
@@ -43,7 +43,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
 
 
   return (
-    <div style={{border: "solid 2px black", borderRadius: "5px", margin: "5px"}}>
+    <div className="task-card-container">
         <label>
             <input type='checkbox' checked={todo.completed} onChange={(e) => handleCheckBoxClick(e)}/>
             {todo.title}

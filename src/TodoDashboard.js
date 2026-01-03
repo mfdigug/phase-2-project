@@ -1,9 +1,9 @@
-import React from 'react'
+import './styles/TodoDashboard.css'
 import TaskCard from './TaskCard'
 
 function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleEditTask, onHandleCheck }){
   return (
-    <div>
+    <div className="todo-dashboard">
         <h2>Task Dashboard</h2>
         {allTodos.map(todo => (
           <TaskCard 

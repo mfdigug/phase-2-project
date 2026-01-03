@@ -1,0 +1,7 @@
+.task-card-container {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    background: radial-gradient(ellipse at center, #D3D3FF 0%, #aca5f9 100%);
+    width: 50%;
+}

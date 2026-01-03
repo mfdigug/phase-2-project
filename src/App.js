@@ -62,6 +62,9 @@ function App() {
           element={
             <HomePage 
               allTodos={allTodos}
+              onHandleDeleteTask={handleDeleteTask}
+              onHandleEditTask={handleEditTask}
+              onHandleCheck={handleCheck}
             />
           } 
         />
