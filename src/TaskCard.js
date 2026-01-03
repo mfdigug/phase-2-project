@@ -10,6 +10,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
     
   function handleCheckBoxClick(e) {
     
+    console.log(typeof todo.id);
 
     fetch(`http://localhost:3000/allTodos/${todo.id}`, {
         method: "PATCH",
@@ -27,10 +28,17 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
     // }
     
     function handleDelete(){
-        fetch(`http://localhost:3000/allTodos/${todo.id}`, {
-           method: "DELETE"
+        fetch(`http://localhost:3000/allTodos/${String(todo.id)}`, {
+           method: "DELETE",
        })
-      onHandleDeleteTask(todo.id)
+        .then(response => {
+          if (!response.ok) throw new Error("Delete failed");
+          onHandleDeleteTask(todo.id);
+      })
+        .catch(err => {
+        console.error(err);
+        alert("Could not delete task");
+      });
     }
 
 
