@@ -5,6 +5,7 @@ import startOfWeek from "date-fns/startOfWeek"
 import getDay from "date-fns/getDay"
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import { useState } from 'react'
+import "./styles/TodoCalendar.css"
 
 const locales = {
   "en-AU": require('date-fns/locale/en-AU')

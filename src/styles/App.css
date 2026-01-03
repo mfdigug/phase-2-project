@@ -7,6 +7,13 @@ html, body {
   font-optical-sizing: auto;
 }
 
+h3{
+    font-size: 1.5rem;
+    color:#344e56;
+    text-shadow: 1px 1px 2px #d6a8ec;
+
+}
+
 .whole-window {
  height: 100vh;
  display: flex;

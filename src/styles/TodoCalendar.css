@@ -1,0 +1,30 @@
+
+.rbc-header {
+    color:aliceblue;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background: rgb(15, 107, 123)
+}
+
+.rbc-time-header-cell .rbc-today {
+    background-color:rgb(23, 149, 172);
+}
+
+.rbc-today {
+    background-color: rgb(168, 227, 238);
+}
+
+.rbc-event{
+    color:rgb(38, 15, 97); 
+    background-color: rgb(226, 188, 246);
+}
+
+.rbc-toolbar button {
+  border-radius: 4px;
+  padding: 6px 12px;
+  background-color:rgb(38, 15, 97);
+  color:antiquewhite;
+}
