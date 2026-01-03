@@ -4,7 +4,7 @@ import parse from "date-fns/parse"
 import startOfWeek from "date-fns/startOfWeek"
 import getDay from "date-fns/getDay"
 import "react-big-calendar/lib/css/react-big-calendar.css"
-import DatePicker from "react-date-picker"
+import { useState } from 'react'
 
 const locales = {
   "en-AU": require('date-fns/locale/en-AU')
@@ -18,16 +18,26 @@ const localizer = dateFnsLocalizer({
   locales
 })
 
-
 function TodoCalendar({ allTodos }){
+
+  const [view, setView] = useState('month');
+  const [date, setDate] = useState(new Date())
+
+
   return (
-    <div>
+    <div style={{height: 500, margin: "50px"}}>
       <Calendar 
         localizer={localizer}
         events={allTodos}
         startAccessor="start"
         endAccessor="end"
-        style={{height: 500, margin: "50px"}}
+        views={['month', 'week', 'day']}
+        view={view}
+        onView={(newView) => setView(newView)}
+        date={date}
+        onNavigate={(date) => {
+        setDate(new Date(date))
+        }}
       />
     </div>
   )
