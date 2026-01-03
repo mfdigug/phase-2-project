@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 
 
 function AddTodo({ onHandleAddTodo }){
   
+  const navigate = useNavigate();
+
   const [newTodo, setNewTodo] = useState({
       title: "",
       category: "home",
@@ -46,8 +49,8 @@ function AddTodo({ onHandleAddTodo }){
      })
      .then(r => r.json())
      .then(newTodoObj => onHandleAddTodo(newTodoObj))
-     //add push function to reroute to dashboard?
      //see if dashboard can reload immediately to fix time format?
+     navigate('/tododashboard')
   }
 
   return (
