@@ -56,12 +56,12 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
 
   return (
     <div className="task-card-container">
-        <label>
+        <label className="todo-title">
             <input type='checkbox' checked={todo.completed} onChange={(e) => handleCheckBoxClick(e)}/>
             {title}
         </label>
 
-        <div className="category-label">{category}{categoryIcon(category)}</div> 
+        <div className="category-label">{category}<span class="icon">{categoryIcon(category)}</span></div> 
         <p>{start.toLocaleString()}</p>
         {/* <button onClick={handleEdit}>{pencil}</button> */}
         <button onClick={handleDelete}>{trash}</button>

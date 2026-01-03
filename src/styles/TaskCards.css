@@ -1,15 +1,45 @@
 .task-card-container {
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
+    margin: 7px;
     background: radial-gradient(ellipse at center, #D3D3FF 0%, #aca5f9 100%);
     width: 50%;
+    box-shadow: 1px 1px 2px black;
 }
 
 .category-label {
-    border: solid 2px black;
+    border: solid 3px rgb(158, 43, 178);
+    background-color: rgb(240, 181, 242);
     border-radius: 5px;
-    padding: 5px;
+    padding: 7px;
     width: fit-content;
     margin: 10px auto;
+    color: rgb(65, 11, 82);
+   
 }
+
+.task-card-container button {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.todo-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7b22a3;
+    text-shadow: 1px 1px 2px rgb(239, 178, 242);;
+    
+}
+
+input[type="checkbox"] {
+  accent-color: #4CAF50;
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.icon {
+    padding: 5px
+}
+
