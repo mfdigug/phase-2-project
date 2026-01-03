@@ -1,0 +1,45 @@
+form {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+form h3{
+    font-size: 2em;
+}
+    
+label {
+    display: block;
+    margin: 10px auto;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(230, 92, 42);
+    text-shadow: .5px .5px 1px rgb(52, 5, 90)
+}
+
+input {
+    font-size: 1rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+
+select {
+    font-size: 1rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: solid 2px rgba(0, 0, 0, 0.742);
+}
+
+button {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(233, 90, 38);
+    border-radius: 5px;
+    color: antiquewhite;
+    text-shadow: .5px .5px 1px rgb(52, 5, 90)
+}
+
+button:hover {
+    color: rgb(216, 181, 250);
+}
+

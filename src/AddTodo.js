@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
-import { format, parseISO } from 'date-fns'
+import './styles/AddTodo.css'
+
 
 
 function AddTodo({ onHandleAddTodo }){
-
-  const house = <FontAwesomeIcon icon={ faHouse } />;
 
   const navigate = useNavigate();
 
@@ -60,13 +57,16 @@ function AddTodo({ onHandleAddTodo }){
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h2>New Todo</h2>
+
+        <h3>New Todo</h3>
+        
         <label htmlFor="title">Description:</label>
         <input
           type="text"
           id="title"
           value={newTodo.title}
           onChange={handleChange}
+          placeholder='Add your todo item here...'
         />
         <br />
         <label htmlFor="category">Category:</label>
