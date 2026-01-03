@@ -1,4 +1,4 @@
-// import './styles/HomePage.css'
+import './styles/HomePage.css'
 // import TaskCard from './TaskCard'
 
 function HomePage({ allTodos }) {
@@ -12,7 +12,7 @@ function HomePage({ allTodos }) {
     
 
   return (
-    <div>
+    <div className="home-page">
       <h2>Home Page</h2>
         <h3>Today's Tasks</h3>
           <ul>

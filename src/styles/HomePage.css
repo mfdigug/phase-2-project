@@ -1,8 +1,14 @@
-/* li {
+.home-page {
+    justify-items: center;
+}
+
+.home-page li {
+    align-content: center;
     list-style: none;
-    border:solid 2px #7b22a3;
+    background-color:#e0b6f3;
     border-radius: 5px;
+    width: 100%;
     box-shadow: 1px 1px 2px black;
-    padding: 3px;
-    margin: 4px;
-} */
+    padding: 5px;
+    margin: 5px;
+}

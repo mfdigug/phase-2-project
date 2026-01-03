@@ -19,4 +19,6 @@ html, body {
 
 .routes-container{
     flex: 2; 
+    justify-content: center;
+    text-align: center;
 }
