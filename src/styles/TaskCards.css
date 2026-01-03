@@ -5,3 +5,11 @@
     background: radial-gradient(ellipse at center, #D3D3FF 0%, #aca5f9 100%);
     width: 50%;
 }
+
+.category-label {
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
+    margin: 10px auto;
+}

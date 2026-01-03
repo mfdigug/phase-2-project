@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { format, parseISO } from 'date-fns'
 
 
 function AddTodo({ onHandleAddTodo }){
-  
+
+  const house = <FontAwesomeIcon icon={ faHouse } />;
+
   const navigate = useNavigate();
 
   const [newTodo, setNewTodo] = useState({

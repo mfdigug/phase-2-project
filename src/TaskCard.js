@@ -1,16 +1,28 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { faPencil } from '@fortawesome/free-solid-svg-icons'
 import "./styles/TaskCards.css"
+import { faHouse, faUserGroup, faSackDollar, faBriefcase, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
 
 function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck }){
    
   const trash = <FontAwesomeIcon icon={faTrash} />
-  const pencil = <FontAwesomeIcon icon={faPencil} />
+
+  const { title, category, start } = todo;
+
+  function categoryIcon(category) {
+    if (category === "home") {
+      return <FontAwesomeIcon icon={faHouse} />
+    } else if (category === "social") {
+      return <FontAwesomeIcon icon={faUserGroup} />
+    } else if (category === "finance") {
+      return <FontAwesomeIcon icon={faSackDollar} />
+    } else if (category === "work") {
+      return <FontAwesomeIcon icon={faBriefcase} />
+    }
+  }
+  
     
   function handleCheckBoxClick(e) {
-    
-    console.log(typeof todo.id);
 
     fetch(`http://localhost:3000/allTodos/${todo.id}`, {
         method: "PATCH",
@@ -46,12 +58,11 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
     <div className="task-card-container">
         <label>
             <input type='checkbox' checked={todo.completed} onChange={(e) => handleCheckBoxClick(e)}/>
-            {todo.title}
+            {title}
         </label>
 
-        <p>{todo.category}</p> 
-        <p>{todo.start.toLocaleString()}</p>
-
+        <div className="category-label">{category}{categoryIcon(category)}</div> 
+        <p>{start.toLocaleString()}</p>
         {/* <button onClick={handleEdit}>{pencil}</button> */}
         <button onClick={handleDelete}>{trash}</button>
 
