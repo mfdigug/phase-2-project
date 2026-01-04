@@ -21,12 +21,19 @@ function App() {
         end: new Date(item.end)
       }));
       setAllTodos(parsedEvents)
-    });
+    })
   }, [])
+  
+  
 
   
   function handleAddTodo(newTodo){
-    const updatedTodos = [...allTodos, newTodo]
+    const parsedTodo = {
+        ...newTodo,
+        start: new Date(newTodo.start),
+        end: new Date(newTodo.end)
+    }
+    const updatedTodos = [...allTodos, parsedTodo]
     setAllTodos(updatedTodos)
   }
 
