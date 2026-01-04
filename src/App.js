@@ -23,6 +23,7 @@ function App() {
       setAllTodos(parsedEvents)
     });
   }, [])
+
   
   function handleAddTodo(newTodo){
     const updatedTodos = [...allTodos, newTodo]

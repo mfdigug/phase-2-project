@@ -25,11 +25,12 @@ function AddTodo({ onHandleAddTodo }){
       ...newTodo,
       [key]: value
     })
+    console.log(newTodo)
   }
 
-  function toUtcISOString(localDateTime) {
-   if (!localDateTime) return ""
-   return new Date(localDateTime).toISOString()
+  function toAPIFormat(newTodoDateTime) {
+    const reformatedDateTime = new Date(newTodoDateTime).toISOString().replace(/\..*/, 'Z');
+    return reformatedDateTime
   }
 
   function handleSubmit(e){
@@ -37,8 +38,8 @@ function AddTodo({ onHandleAddTodo }){
 
     const formattedTodo = {
     ...newTodo,
-      start: toUtcISOString(newTodo.start),
-      end: toUtcISOString(newTodo.end)
+      start: toAPIFormat(newTodo.start),
+      end: toAPIFormat(newTodo.end)
     }
 
     fetch(`http://localhost:3000/allTodos`, {
@@ -50,7 +51,6 @@ function AddTodo({ onHandleAddTodo }){
      })
      .then(r => r.json())
      .then(newTodoObj => onHandleAddTodo(newTodoObj))
-     //see if dashboard can reload immediately to fix time format?
      navigate('/tododashboard')
   }
 

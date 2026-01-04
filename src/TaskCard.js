@@ -61,7 +61,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleEditTask, onHandleCheck })
             {title}
         </label>
 
-        <div className="category-label">{category}<span class="icon">{categoryIcon(category)}</span></div> 
+        <div className="category-label">{category}<span className="icon">{categoryIcon(category)}</span></div> 
         <p>{start.toLocaleString()}</p>
         {/* <button onClick={handleEdit}>{pencil}</button> */}
         <button onClick={handleDelete}>{trash}</button>
