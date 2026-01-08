@@ -10,17 +10,33 @@
 }
 
 .rbc-time-header-cell .rbc-today {
-    background-color:rgb(23, 149, 172);
+    background-color:rgb(182, 105, 42);
 }
 
 .rbc-today {
     background-color: rgb(168, 227, 238);
 }
 
-.rbc-event{
-    color:rgb(38, 15, 97); 
+.rbc-event.home {
+   color:rgb(38, 15, 97); 
     background-color: rgb(226, 188, 246);
 }
+
+.rbc-event.social{
+    color:rgb(142, 33, 128); 
+    background-color: rgb(241, 185, 234);
+}
+
+.rbc-event.finance{
+    color:rgb(30, 97, 15); 
+    background-color: rgb(180, 242, 166);
+}
+
+.rbc-event.work{
+    color:rgb(15, 41, 97); 
+    background-color: rgb(143, 175, 243);
+}
+
 
 .rbc-toolbar button {
   border-radius: 4px;
