@@ -2,12 +2,7 @@ import "./styles/TodoDashboard.css";
 import TaskCard from "./TaskCard";
 import { useState } from "react";
 
-function TodoDashboard({
-  allTodos,
-  onHandleDeleteTask,
-  onHandleEditTask,
-  onHandleCheck,
-}) {
+function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleCheck }) {
   const [filter, setFilter] = useState("All");
 
   function displayTodos() {
@@ -40,17 +35,16 @@ function TodoDashboard({
         <option value="social">Social</option>
       </select>
 
-      {/* add filter and/or sort buttons here */}
-
-      {displayTodos().map((todo) => (
-        <TaskCard
-          key={todo.id}
-          todo={todo}
-          onHandleDeleteTask={onHandleDeleteTask}
-          onHandleEditTask={onHandleEditTask}
-          onHandleCheck={onHandleCheck}
-        />
-      ))}
+      <div class="todo-cards-container">
+        {displayTodos().map((todo) => (
+          <TaskCard
+            key={todo.id}
+            todo={todo}
+            onHandleDeleteTask={onHandleDeleteTask}
+            onHandleCheck={onHandleCheck}
+          />
+        ))}
+      </div>
     </div>
   );
 }

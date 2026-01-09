@@ -47,10 +47,6 @@ function App() {
     setAllTodos(updatedTodos);
   }
 
-  function handleEditTask(id) {
-    console.log(id);
-  }
-
   return (
     <div className="whole-window">
       <div className="header-container">
@@ -64,7 +60,6 @@ function App() {
               <HomePage
                 allTodos={allTodos}
                 onHandleDeleteTask={handleDeleteTask}
-                onHandleEditTask={handleEditTask}
                 onHandleCheck={handleCheck}
               />
             }
@@ -76,7 +71,6 @@ function App() {
               <TodoDashboard
                 allTodos={allTodos}
                 onHandleDeleteTask={handleDeleteTask}
-                onHandleEditTask={handleEditTask}
                 onHandleCheck={handleCheck}
               />
             }

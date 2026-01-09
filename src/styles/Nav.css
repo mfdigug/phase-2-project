@@ -16,7 +16,8 @@
     box-shadow: 1px 1px 2px black;
     padding: 5px;
     margin: 4px;
-    width: 10rem;
+    width: 12rem;
+    font-size: 1.2rem;
 }
 
 .nav-menu a {
@@ -31,7 +32,7 @@
     text-shadow: 2px 2px 4px black;    
 }
 
-@media (min-width: 700px) {
+@media (min-width: 840px) {
 .nav-menu {
     display: flex;
     flex-direction: row;
@@ -40,7 +41,6 @@
 
 .nav-menu li {
     display: inline-block;
-    width: 10rem;
 }
 
 }

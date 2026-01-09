@@ -8,12 +8,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-function TaskCard({
-  todo,
-  onHandleDeleteTask,
-  onHandleEditTask,
-  onHandleCheck,
-}) {
+function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
   const trash = <FontAwesomeIcon icon={faTrash} />;
 
   const { title, category, start } = todo;
@@ -41,10 +36,6 @@ function TaskCard({
       .then((r) => r.json())
       .then((updatedTodo) => onHandleCheck(updatedTodo.id));
   }
-
-  // function handleEdit(){
-
-  // }
 
   function handleDelete() {
     fetch(`http://localhost:3000/allTodos/${String(todo.id)}`, {
@@ -75,8 +66,7 @@ function TaskCard({
         {category}
         <span className="icon">{categoryIcon(category)}</span>
       </div>
-      <p>{start.toLocaleString()}</p>
-      {/* <button onClick={handleEdit}>{pencil}</button> */}
+      <p>{start.toString().slice(0, 21)}</p>
       <button onClick={handleDelete}>{trash}</button>
     </div>
   );

@@ -15,7 +15,14 @@
     width: fit-content;
     margin: 10px auto;
     color: rgb(65, 11, 82);
+    font-size: 1.2rem;
    
+}
+
+.task-card-container p {
+    color: #561772;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .task-card-container button {
@@ -24,7 +31,7 @@
 }
 
 .todo-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #7b22a3;
     text-shadow: 1px 1px 2px rgb(239, 178, 242);;
@@ -41,5 +48,11 @@ input[type="checkbox"] {
 
 .icon {
     padding: 5px
+}
+
+@media (min-width: 1000px) {
+    .task-card-container{
+        width: 100%;
+    }
 }
 
