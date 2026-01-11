@@ -13,9 +13,9 @@ function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleCheck }) {
       return allTodos.filter((todo) => todo.category === filter);
     }
     if (isDueSoon) {
-      return allTodos.sort((a, b) => new Date(a.start) - new Date(b.start));
-    } else {
       return allTodos.sort((a, b) => new Date(b.start) - new Date(a.start));
+    } else {
+      return allTodos.sort((a, b) => new Date(a.start) - new Date(b.start));
     }
   }
 
