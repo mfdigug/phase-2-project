@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# React Project: 
+Todo App with Calendar integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description
+While I find it effective to list all my todos in one place, when planning for how to execute these I also find it helpful to be able to visualise my day, week or month in order to assist in prioritisation. This project was designed to improve on the basic todo apps by adding a calendar component which visually displays upcoming tasks.
 
-## Available Scripts
+# Usage
+This app allows you to create, store and alternate between list, filtered and calendar displays of your todos.
 
-In the project directory, you can run:
+# server
+This app is designed to work in conjunction with a json-server to persist changes. This is configured as follows:
+{
+  "allTodos": [
+    {
+      "id": "1",
+      "title": "dog grooming",
+      "category": "home",
+      "start": "2026-01-07T00:30:00Z",
+      "end": "2026-01-07T01:30:00Z",
+      "allDay": false,
+      "completed": true
+    }
+  ]
+}
 
-### `npm start`
+# Static components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The top part of the page displays a Welcome message and Navigation menu.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Navigation menu buttons allow you to select your desired view.
 
-### `npm test`
+# Routed components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Home Page display any tasks scheduled for today.
 
-### `npm run build`
+The Todo Dashboard displays all tasks and can be sorted by date scheduled and/or filtered by todo category.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Home Page and Todo Dashboard render 'Task Card' components which contain information about each of the Todo objects and can be manipulated from here. This includes the checkbox to updated "completed", and the bin icon to permanently delete the task.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Todo Calendar uses 
+http://github.com/jquense/react-big-calendar and 
+https://date-fns.org/ to manipulate the todo data and display the todos using start date and times for calendar displays. Optional views are: month, week, day. Additionally, events are colour coded by category.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Add Todo Page allows user to enter new todos which will be posted to the server and update all other components.
 
-### `npm run eject`
+Icons used have been drawn from: https://fontawesome.com/icons/packs/classic
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

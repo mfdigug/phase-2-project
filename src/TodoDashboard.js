@@ -1,15 +1,21 @@
 import "./styles/TodoDashboard.css";
 import TaskCard from "./TaskCard";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleCheck }) {
   const [filter, setFilter] = useState("All");
+  const [isDueSoon, setIsDueSoon] = useState(true);
 
   function displayTodos() {
-    if (filter === "All") {
-      return allTodos;
-    } else {
+    if (filter !== "All") {
       return allTodos.filter((todo) => todo.category === filter);
+    }
+    if (isDueSoon) {
+      return allTodos.sort((a, b) => new Date(a.start) - new Date(b.start));
+    } else {
+      return allTodos.sort((a, b) => new Date(b.start) - new Date(a.start));
     }
   }
 
@@ -21,6 +27,14 @@ function TodoDashboard({ allTodos, onHandleDeleteTask, onHandleCheck }) {
   return (
     <div className="todo-dashboard">
       <h3>Task Dashboard</h3>
+
+      <button onClick={() => setIsDueSoon(!isDueSoon)}>
+        Sort:
+        {isDueSoon 
+        ? (<> Due Soon <FontAwesomeIcon icon={faArrowUp} /> </>) 
+        : (<> Due Later <FontAwesomeIcon icon={faArrowDown} /> </>)
+        }
+      </button>
 
       <label htmlFor="category">Choose a category:</label>
       <select

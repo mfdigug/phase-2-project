@@ -9,9 +9,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
-  const trash = <FontAwesomeIcon icon={faTrash} />;
-
+  
+  
   const { title, category, start } = todo;
+
+  const trash = <FontAwesomeIcon icon={faTrash} />;
 
   function categoryIcon(category) {
     if (category === "home") {
@@ -59,6 +61,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
           checked={todo.completed}
           onChange={(e) => handleCheckBoxClick(e)}
         />
+
         {title}
       </label>
 
@@ -66,7 +69,9 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
         {category}
         <span className="icon">{categoryIcon(category)}</span>
       </div>
+
       <p>{start.toString().slice(0, 21)}</p>
+
       <button onClick={handleDelete}>{trash}</button>
     </div>
   );

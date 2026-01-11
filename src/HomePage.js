@@ -8,6 +8,7 @@ function HomePage({ allTodos, onHandleDeleteTask, onHandleCheck }) {
   const doToday = allTodos.filter(
     (todo) => todo.start.toDateString() === today
   );
+
   const todaysTasks = doToday.map((todo) => (
     <TaskCard
       key={todo.id}

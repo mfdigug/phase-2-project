@@ -2,7 +2,16 @@
     justify-items: center;
 }
 
-.home-page-task-container {
-    width: 50%;
+ .home-page-task-container {
+        width: 100%;
+        justify-items: center;
+}
+
+
+
+@media(min-width: 850px) {
+    .home-page-task-container {
+        width: 50%;
+}
 }
 

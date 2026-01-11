@@ -38,7 +38,7 @@ function TodoCalendar({ allTodos }) {
   };
 
   return (
-    <div style={{ height: 500, margin: "50px" }}>
+    <div style={{ height: 700, margin: "50px" }}>
       <Calendar
         localizer={localizer}
         events={allTodos}
