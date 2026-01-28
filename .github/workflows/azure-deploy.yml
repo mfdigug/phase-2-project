@@ -11,34 +11,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
 
+      # 3. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
+      # 4. Build React app with API environment variable
       - name: Build React app
         run: npm run build
         env:
           REACT_APP_API: https://todo-calendar-app-json-server.onrender.com/
 
-      - name: Verify build folder exists
-        run: ls -la build
-
+      # 5. Login to Azure
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      # 6. Deploy build folder to Azure Web App
       - name: Deploy to Azure Web App
-        run: |
-          az webapp deploy \
-            --resource-group rg-web-prod-eastau \
-            --name todo-and-cal-app \
-            --src-path build \
-            --type static
+        run: az webapp deploy \
+          --resource-group rg-web-prod-eastau \
+          --name todo-and-cal-app \
+          --src-path build \
+          --type static
