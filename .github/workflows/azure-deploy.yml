@@ -35,5 +35,5 @@ jobs:
         run: |
           az webapp deploy \
             --resource-group rg-web-prod-eastau \
-            --name todo-cal-app \
+            --name todo-and-cal-app \
             --src-path ./build
