@@ -23,6 +23,8 @@ jobs:
 
       - name: Build React app
         run: npm run build
+        env:
+          REACT_APP_API: https://todo-calendar-app-json-server.onrender.com/
 
       - name: Azure Login
         uses: azure/login@v1
