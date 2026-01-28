@@ -27,8 +27,8 @@ jobs:
         env:
           REACT_APP_API: https://todo-calendar-app-json-server.onrender.com/
 
-      - name: Zip build folder
-        run: zip -r build.zip build
+      - name: Verify build folder exists
+        run: ls -la build
 
       - name: Azure Login
         uses: azure/login@v1
@@ -40,5 +40,5 @@ jobs:
           az webapp deploy \
             --resource-group rg-web-prod-eastau \
             --name todo-and-cal-app \
-            --src-path build.zip \
+            --src-path build \
             --type static
