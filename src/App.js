@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import Header from "./Header";
@@ -7,13 +7,13 @@ import TodoDashboard from "./TodoDashboard";
 import TodoCalendar from "./TodoCalendar.js";
 import AddTodo from "./AddTodo.js";
 
-export const allTodosContext = createContext();
+const API_URL = process.env.REACT_APP_API;
 
 function App() {
   const [allTodos, setAllTodos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/allTodos")
+    fetch(`${API_URL}/allTodos`)
       .then((r) => r.json())
       .then((data) => {
         const parsedEvents = data.map(parseTodo);

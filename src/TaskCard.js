@@ -8,9 +8,9 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
+const API_URL = process.env.REACT_APP_API;
+
 function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
-  
-  
   const { title, category, start } = todo;
 
   const trash = <FontAwesomeIcon icon={faTrash} />;
@@ -28,7 +28,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
   }
 
   function handleCheckBoxClick(e) {
-    fetch(`http://localhost:3000/allTodos/${todo.id}`, {
+    fetch(`${API_URL}/allTodos/${todo.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function TaskCard({ todo, onHandleDeleteTask, onHandleCheck }) {
   }
 
   function handleDelete() {
-    fetch(`http://localhost:3000/allTodos/${String(todo.id)}`, {
+    fetch(`${API_URL}/allTodos/${String(todo.id)}`, {
       method: "DELETE",
     })
       .then((response) => {

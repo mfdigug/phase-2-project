@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/AddTodo.css";
 
+const API_URL = process.env.REACT_APP_API;
+
 function AddTodo({ onHandleAddTodo }) {
   const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ function AddTodo({ onHandleAddTodo }) {
       end: toAPIFormat(newTodo.end),
     };
 
-    fetch(`http://localhost:3000/allTodos`, {
+    fetch(`${API_URL}/allTodos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
